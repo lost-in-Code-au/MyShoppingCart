@@ -1,23 +1,36 @@
 package Shop;
 
-import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
  * Created by Reece Jones on 23/07/2017.
  */
 public class BudgetUniverse {
-    HashMap<String, BigDecimal> galaxy;
+    ArrayList<Planet> universe;
 
-    protected BudgetUniverse(){
-        galaxy = new HashMap<String, BigDecimal>();
+    public BudgetUniverse(){
+        universe = new ArrayList<Planet>();
+        universe.add(new Planet("Alderaan", 30000000.00));
+        universe.add(new Planet("Balmorra", 25000000.00));
+        universe.add(new Planet("Hoth", 6000000.00));
 
-        galaxy.put("Alderaan", BigDecimal.valueOf(30000000.00));
-        galaxy.put("Balmorra", BigDecimal.valueOf(25000000.00));
-        galaxy.put("Hoth", BigDecimal.valueOf(6000000.00));
     }
 
-    public String[] BudgetUniverse getKey() {
-        return galaxy.keySet();
+    public Planet getPlanetByIndex(int index) {
+        return universe.get(index);
     }
+
+    public String getPlanetNameByIndex(int index) {
+        return universe.get(index).getName();
+    }
+
+    public double getPlanetPricebyIndex(int index) {
+        return universe.get(index).getPrice();
+    }
+
+//    public static buildUniverse(){
+//
+//    }
+
 }

@@ -1,3 +1,6 @@
+import Shop.BudgetUniverse;
+import Shop.Planet;
+
 import java.math.BigDecimal;
 import java.util.ArrayList;
 
@@ -6,28 +9,32 @@ import java.util.ArrayList;
  */
 public class Cart {
 
-    ArrayList<String> planets;
-    String[] keys;
-    BigDecimal totalOfCart;
+    ArrayList<Planet> planets;
+    BudgetUniverse universe;
+    double totalOfCart;
 
     public Cart(){
-        planets = new ArrayList<String>();
-        keys = new String[]{"Alderaan", "Balmorra", "Hoth"};
+        universe = new BudgetUniverse();
+        ArrayList<Planet> planets;
     }
 
-    public void addItem(String planet){
-        planets.add(planet);
+    public void addItem(int planet) {
+        planets.add(universe.getPlanetByIndex(planet));
     }
 
-    public void removeItem(String planet){
+    public void removeItem(int planet) {
         planets.remove(planet);
     }
 
-    public void getTotalOfCart(){
+    public String getItemsName(int index) {
+        return planets.get(index).toString();
+    }
+
+    public void getTotalOfCart() {
         planets.size();
     }
 
-    public String getItemName(int index){
-        return planets.get(index);
+    public void emptyCart() {
+        planets.clear();
     }
 }
