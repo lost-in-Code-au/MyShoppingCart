@@ -9,32 +9,48 @@ import java.util.ArrayList;
  */
 public class Cart {
 
-    ArrayList<Planet> planets;
+    ArrayList<Planet> cart;
     BudgetUniverse universe;
     double totalOfCart;
 
     public Cart(){
+        cart = new ArrayList<Planet>();
         universe = new BudgetUniverse();
-        ArrayList<Planet> planets;
+//        ArrayList<Planet> planets;
     }
 
     public void addItem(int planet) {
-        planets.add(universe.getPlanetByIndex(planet));
+        cart.add(universe.getPlanetByIndex(planet));
     }
 
     public void removeItem(int planet) {
-        planets.remove(planet);
+        cart.remove(planet);
     }
 
-    public String getItemsName(int index) {
-        return planets.get(index).toString();
+    public String getItemName(int index) {
+        return cart.get(index).getName();
     }
 
-    public void getTotalOfCart() {
-        planets.size();
+
+    public double getItemPrice(int i) {
+        return cart.get(i).getPrice();
+    }
+
+    public double getTotalOfCart() {
+        double sum = 0;
+        for(int i = 0; i < cart.size(); i++)
+        {
+            sum = sum + cart.get(i).getPrice();
+        }
+        return sum;
     }
 
     public void emptyCart() {
-        planets.clear();
+        cart.clear();
     }
+
+    public int size() {
+        return cart.size();
+    }
+
 }
