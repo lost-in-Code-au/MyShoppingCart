@@ -1,7 +1,5 @@
 package Shop;
-
 import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  * Created by Reece Jones on 23/07/2017.
@@ -28,9 +26,4 @@ public class BudgetUniverse {
     public double getPlanetPricebyIndex(int index) {
         return universe.get(index).getPrice();
     }
-
-//    public static buildUniverse(){
-//
-//    }
-
 }

@@ -1,7 +1,5 @@
 import Shop.BudgetUniverse;
 import Shop.Planet;
-
-import java.math.BigDecimal;
 import java.util.ArrayList;
 
 /**
@@ -17,14 +15,15 @@ public class Cart {
         cart = new ArrayList<Planet>();
         universe = new BudgetUniverse();
 //        ArrayList<Planet> planets;
+        totalOfCart = getTotalOfCart();
     }
 
     public void addItem(int planet) {
         cart.add(universe.getPlanetByIndex(planet));
     }
 
-    public void removeItem(int planet) {
-        cart.remove(planet);
+    public void removeItem(int index) {
+        cart.remove(index);
     }
 
     public String getItemName(int index) {

@@ -4,8 +4,6 @@
 
 import org.junit.Before;
 import org.junit.Test;
-
-import java.math.BigDecimal;
 import static org.junit.Assert.*;
 
 /**
@@ -49,4 +47,23 @@ public class CartTest {
         double total = cart.getTotalOfCart();
         assertEquals(61000000.00, total, 2);
     }
+
+    @Test
+    public void testCartCanRemoveItem() {
+        cart.addItem(0);
+        cart.addItem(1);
+        cart.removeItem(0);
+        assertEquals(1, cart.size());
+    }
+
+    @Test
+    public void testCartCanEmpty() {
+        cart.addItem(0);
+        cart.addItem(1);
+        cart.emptyCart();
+        assertEquals(0, cart.size());
+    }
+
+
+
 }
