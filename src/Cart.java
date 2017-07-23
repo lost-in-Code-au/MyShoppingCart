@@ -47,6 +47,19 @@ public class Cart {
         cart.clear();
     }
 
+    public String checkForDiccountOfTwoForOne(int index) {
+        //I need to take a item from the array cart and compare it to each other item in the array
+        String a = getItemName(index);
+
+        for (int x = 0; x < cart.size(); x++)
+        {
+            if (index != x){
+                if (a == getItemName(x)){ cart.get(x).setPrice(0.0);}
+            }
+        }
+        return a;
+    }
+
     public int size() {
         return cart.size();
     }

@@ -64,6 +64,12 @@ public class CartTest {
         assertEquals(0, cart.size());
     }
 
-
+    @Test
+    public void testIfDiscountIsApplied() {
+        cart.addItem(0);
+        cart.addItem(0);
+        double price = cart.getItemPrice(0);
+        assertEquals(30_000_000.00, price, 2 );
+    }
 
 }

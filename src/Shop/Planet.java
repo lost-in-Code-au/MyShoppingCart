@@ -6,10 +6,12 @@ package Shop;
 public class Planet {
     private String name;
     private double price;
+    private Location location;
 
-    protected Planet(String name, double price){
+    protected Planet(String name, double price, Location location){
         this.name = name;
         this.price = price;
+        this.location = location;
     }
 
     public String getName() {
@@ -18,5 +20,9 @@ public class Planet {
 
     public double getPrice() {
         return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 }
