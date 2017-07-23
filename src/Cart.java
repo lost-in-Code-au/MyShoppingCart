@@ -14,8 +14,7 @@ public class Cart {
     public Cart(){
         cart = new ArrayList<Planet>();
         universe = new BudgetUniverse();
-//        ArrayList<Planet> planets;
-        totalOfCart = getTotalOfCart();
+        totalOfCart = getTotalOfCart();//to provided update on view.
     }
 
     public void addItem(int planet) {
