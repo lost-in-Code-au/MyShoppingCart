@@ -21,11 +21,21 @@ public class BudgetUniverse {
         return universe.get(index);
     }
 
+    //The last two are for the viewport on the app/website
     public String getPlanetNameByIndex(int index) {
         return universe.get(index).getName();
     }
 
     public double getPlanetPricebyIndex(int index) {
         return universe.get(index).getPrice();
+    }
+
+    //Setters for admin to add and remove
+    public void addNewPlanet(String str, double num, Location location) {
+        universe.add(new Planet(str, num, location));
+    }
+
+    public void removePlanetByIndex(int index) {
+        universe.remove(index);
     }
 }

@@ -39,7 +39,9 @@ public class Cart {
         for(int i = 0; i < cart.size(); i++)
         {
             sum = sum + cart.get(i).getPrice();
+            deal241(i);/*kills 3 items after first discount is applied, must fix 241 deal*/
         }
+
         return sum;
     }
 
@@ -47,14 +49,22 @@ public class Cart {
         cart.clear();
     }
 
-    public String checkForDiccountOfTwoForOne(int index) {
+    public String deal241(int index) {
         //I need to take a item from the array cart and compare it to each other item in the array
         String a = getItemName(index);
 
         for (int x = 0; x < cart.size(); x++)
         {
             if (index != x){
-                if (a == getItemName(x)){ cart.get(x).setPrice(0.0);}
+
+                double tempPrice = getItemPrice(x);
+                if (tempPrice != 0.0 /*if x.getPrice = 0.0 break*/){
+
+                    if (a == getItemName(x)){ cart.get(x).setPrice(0.0);}
+                } else
+                    {
+                        continue;
+                    }
             }
         }
         return a;
